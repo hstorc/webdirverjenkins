@@ -5,6 +5,8 @@ var options = {
     }
 };
 console.log('testing this right now');
+console.log('remoteoptions',webdriverio
+    .remote(options));
 webdriverio
     .remote(options)
     .init()
