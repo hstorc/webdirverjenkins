@@ -1,3 +1,8 @@
+var webdriver = require('selenium-webdriver');
+var driver = new webdriver.Builder()
+    .withCapabilities(webdriver.Capabilities.chrome())
+    .build();
+
 var webdriverio = require('webdriverio');
 var options = {
     desiredCapabilities: {
@@ -5,14 +10,10 @@ var options = {
     }
 };
 console.log('testing this right now');
-console.log('remoteoptions',webdriverio
-    .remote(options));
-webdriverio
-    .remote(options)
-    .init()
-    .url('http://www.google.com')
+console.log('remoteoptions',driver);
+driver.get('http://www.google.com')
     .getTitle().then(function(title) {
         console.log('Title was: ' + title);
     })
-    .end();
+    .quit();
 
