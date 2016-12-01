@@ -9,11 +9,11 @@ var options = {
         browserName: 'firefox'
     }
 };
-console.log('testing this right now');
-console.log('remoteoptions',driver);
-webdriverio.url('http://www.google.com')
+var client = webdriverio.remote(options);
+client
+    .init()
+    .url('http://www.google.com')
     .getTitle().then(function(title) {
         console.log('Title was: ' + title);
-    })
-    .quit();
+});
 
