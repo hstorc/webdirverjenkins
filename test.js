@@ -11,7 +11,7 @@ var options = {
 };
 console.log('testing this right now');
 console.log('remoteoptions',driver);
-driver.get('http://www.google.com')
+webdriverio.url('http://www.google.com')
     .getTitle().then(function(title) {
         console.log('Title was: ' + title);
     })
